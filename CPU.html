@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="description" content="Computer Architecture">
+        <title>CPU</title>
+        <style>
+            html,body{
+                font-family: Arial, Helvetica, sans-serif;
+                margin: 0;
+                padding: 0;
+            }
+            header{
+                background-color: #595959;
+                padding: 1px;
+                text-align: right;
+                width: 100%;
+                position: fixed;
+                top: 0;
+                left: 0;
+                
+            }
+            header div{
+                float: left;
+                color: white;
+                padding: 15px;
+                padding-left: 30px;
+                font-size: 23px;
+                font-weight: bold;
+                font-family: Copperplate Gothic;
+            }
+            header ul li{
+                list-style-type: none;
+                display: inline-block;
+                text-align: right;
+                padding-right: 30px;
+                font-family: andalus;
+                font-weight: bold;
+            }
+            header ul li a{
+                text-decoration: none;
+                color: white;
+            }
+            header ul li a:hover{
+                color: #c1c1c1;
+            }
+            div.CPUslot{
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <img src="images/line.png" style="width: 100%; height: 2px; padding-top: 37.3px; position: fixed;">
+        <header>
+            <div>Computer Architecture</div>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="Input Devices.html">Input Devices</a></li>
+                <li><a href="Output Devices.html">Output Devices</a></li>
+                <li><a href="MotherBoard.html">MotherBoard</a></li>
+                <li style="color: #c1c1c1;">CPU</li>
+                <li><a href="Machine Cycle.html">Machine Cycle</a></li>
+                <li><a href="Memory.html">Memory (RAM)</a></li>
+                <li><a href="Storage.html">Storage</a></li>
+            </ul>
+        </header>
+        <h1 style="padding-left: 20px; padding-top: 70px;">CPU</h1>
+        <img src="images/cpu.png" alt="CPU intel Core i7" style="float: right; width: 350px; padding-right: 50px;
+        padding-top: 60px;">
+        <p style="padding-left: 35px; padding-right: 50px;">
+            A central processing unit (CPU), also called a central processor, main processor or just processor, 
+            is the electronic circuitry that executes instructions comprising a computer program. The CPU performs 
+            basic arithmetic, logic, controlling, and input/output (I/O) operations specified by the instructions in 
+            the program. This contrasts with external components such as main memory and I/O circuitry, and specialized 
+            processors such as graphics processing units (GPUs).
+        </p>
+        <p style="padding-left: 35px; padding-right: 50px;">
+            The form, design, and implementation of CPUs have changed over time, but their fundamental operation 
+            remains almost unchanged. Principal components of a CPU include the arithmetic logic unit (ALU) that 
+            performs arithmetic and logic operations, processor registers that supply operands to the ALU and store 
+            the results of ALU operations, and a control unit that orchestrates the fetching (from memory) and 
+            execution of instructions by directing the coordinated operations of the ALU, registers and other components.
+        </p>
+        <p style="padding-left: 35px; padding-right: 50px;">
+            Most modern CPUs are implemented on integrated circuit (IC) microprocessors, with one or more 
+            CPUs on a single metal-oxide-semiconductor (MOS) IC chip. Microprocessors chips with multiple CPUs are 
+            multi-core processors. The individual physical CPUs, processor cores, can also be multithreaded to 
+            create additional virtual or logical CPUs.
+        </p>
+        <p style="padding-left: 35px; padding-right: 50px;">
+            An IC that contains a CPU may also contain memory, peripheral interfaces, and other components of a computer; 
+            such integrated devices are variously called microcontrollers or systems on a chip (SoC).
+        </p>
+        <p style="padding-left: 35px; padding-right: 370px;">
+            Array processors or vector processors have multiple processors that operate in parallel, with no 
+            unit considered central. Virtual CPUs are an abstraction of dynamical aggregated computational resources.
+        </p>
+        <img src="images/line.png" style="width: 98.6%; height: 2px; padding: 10px;">
+        <h2 style="padding-left: 20px;">Operations of CPUs :</h2>
+        <p style="padding-left: 35px; padding-right: 50px;">
+            The fundamental operation of most CPUs, regardless of the physical form they take, is to execute a 
+            sequence of stored instructions that is called a program. The instructions to be executed are kept in 
+            some kind of computer memory. Nearly all CPUs follow the fetch, decode and execute steps in their operation, 
+            which are collectively known as the instruction cycle.
+        </p><br>
+        <p style="padding-left: 45px; font-size: 20px; font-weight: bold;">There are three main types of operations :</p>
+        <ul style="color: #E46C0A; padding-left: 75px;">
+            <li>Fetch</li>
+            <li>Decode</li>
+            <li>Execute</li>
+        </ul><br>
+        <p style="padding-left: 30px;"><b>We will talk briefly about each of them.</b></p>
+        <img src="images/line.png" style="width: 98.6%; height: 2px; padding: 10px;">
+        <h2 style="padding-left: 20px;">Fetch</h2>
+        <p style="padding-left: 35px; padding-right: 50px;">
+            The first step, fetch, involves retrieving an instruction (which is represented by a number or 
+            sequence of numbers) from program memory. The instruction's location (address) in program memory 
+            is determined by the program counter (PC; called the "instruction pointer" in Intel x86 microprocessors), 
+            which stores a number that identifies the address of the next instruction to be fetched. After an instruction 
+            is fetched, the PC is incremented by the length of the instruction so that it will contain the 
+            address of the next instruction in the sequence.[d] Often, the instruction to be fetched must be 
+            retrieved from relatively slow memory, causing the CPU to stall while waiting for the instruction to 
+            be returned. This issue is largely addressed in modern processors by caches and pipeline architectures (see below).
+        </p>
+        <img src="images/line.png" style="width: 98.6%; height: 1.5px; padding: 10px;">
+        <h2 style="padding-left: 20px;">Decode</h2>
+        <p style="padding-right: 50px; padding-left: 35px;">
+            The instruction that the CPU fetches from memory determines what the CPU will do. In the decode step, 
+            performed by the circuitry known as the instruction decoder, the instruction is converted into signals 
+            that control other parts of the CPU.<br>
+            The way in which the instruction is interpreted is defined by the CPU's instruction set architecture (ISA). 
+            Often, one group of bits (that is, a "field") within the instruction, called the opcode, indicates which 
+            operation is to be performed, while the remaining fields usually provide supplemental information required 
+            for the operation, such as the operands. Those operands may be specified as a constant value 
+            (called an immediate value), or as the location of a value that may be a processor register or a memory address, 
+            as determined by some addressing mode.<br>
+            In some CPU designs the instruction decoder is implemented as a hardwired, unchangeable circuit. 
+            In others, a microprogram is used to translate instructions into sets of CPU configuration signals that 
+            are applied sequentially over multiple clock pulses. In some cases the memory that stores the microprogram 
+            is rewritable, making it possible to change the way in which the CPU decodes instructions.
+        </p>
+        <img src="images/line.png" style="width: 98.6%; height: 1.5px; padding: 10px;">
+        <h2 style="padding-left: 20px;">Execute</h2>
+        <p style="padding-left: 35px; padding-right: 50px;">
+            After the fetch and decode steps, the execute step is performed. Depending on the CPU architecture, 
+            this may consist of a single action or a sequence of actions. During each action, various parts of the 
+            CPU are electrically connected so they can perform all or part of the desired operation and then the action 
+            is completed, typically in response to a clock pulse. Very often the results are written to an internal CPU 
+            register for quick access by subsequent instructions. In other cases results may be written to slower, but less 
+            expensive and higher capacity main memory.<br>
+            For example, if an addition instruction is to be executed, the arithmetic logic unit (ALU) inputs 
+            are connected to a pair of operand sources (numbers to be summed), the ALU is configured to perform an addition 
+            operation so that the sum of its operand inputs will appear at its output, and the ALU output is connected to 
+            storage (e.g., a register or memory) that will receive the sum. When the clock pulse occurs, the sum will be 
+            transferred to storage and, if the resulting sum is too large (i.e., it is larger than the ALU's output word size), 
+            an arithmetic overflow flag will be set.
+        </p>
+        <img src="images/line.png" style="width: 98.6%; height: 1.5px; padding: 10px;">
+        <p style="padding-left: 35px; font-size: 20px; font-weight: bold;">CPU slot on the motherboard :</p>
+        <div class="CPUslot">
+            <img src="images/cpu slot.png" alt="CPU Slot" style="width: 500px;">
+            <img src="images/cpu slot on mother board.png" alt="CPU Slot On MotherBoard" style="width: 500px;
+            padding-left: 30px;">
+        </div>
+        <img src="images/line.png" style="width: 98.6%; height: 2px; padding: 10px;">
+    </body>
+</html>
